@@ -24,7 +24,8 @@ void HCSR04::start(void){
 void HCSR04::isr_fall(){
     pulsetime.stop();
     // pulsedur = pulsetime.read_us();              ←nucleoに書き込んでも正常に動作しない
-    pulsedur = pulsetime.elapsed_time().count();    // こっちはちゃんと動きました    distance= (pulsedur*343)/20000;
+    pulsedur = pulsetime.elapsed_time().count();    // こっちはちゃんと動きました
+    distance= (pulsedur*343)/20000;
     pulsetime.reset();
 }
 
